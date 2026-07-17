@@ -1,28 +1,28 @@
 # Template for the Homebrew formula. The release workflow substitutes
-# 0.1.2 and the four @@SHA256_*@@ placeholders, then pushes the rendered
+# 0.2.0 and the four @@SHA256_*@@ placeholders, then pushes the rendered
 # Formula/burrow.rb to the solidsilver/homebrew-burrow tap.
 class Burrow < Formula
   desc "Distributed backup among friends, over iroh"
   homepage "https://github.com/solidsilver/burrow"
-  version "0.1.2"
+  version "0.2.0"
   license any_of: ["MIT", "Apache-2.0"]
 
   on_macos do
     # Apple Silicon only; Intel macOS is not published (build from source).
     on_arm do
       url "https://github.com/solidsilver/burrow/releases/download/v#{version}/burrow-#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "ec2566b9f823ed3c63d055518a03b31d9b4cc9a2761b21f888baeafd65360e73"
+      sha256 "2522f47a57baa06a333b194e6bea22ee733028f3c62fe6fe1eea9baf7a50778c"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/solidsilver/burrow/releases/download/v#{version}/burrow-#{version}-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "c40f142512f745fe39297f4d619f516aca2cb036747f38f10d15efed79c8f122"
+      sha256 "228388710027d26dc1473fb97a8ae268b519e47ec65d3a146deb9f5b505bb0d3"
     end
     on_intel do
       url "https://github.com/solidsilver/burrow/releases/download/v#{version}/burrow-#{version}-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "3cef61f0f7c252d7892ad429ad21ab8a28f2ec771bfe813f3f6ea9c58f13c2a5"
+      sha256 "f526ab476ae48cfd3cccdd331b8193a46e33478461fd8f9d41a895fde2edad55"
     end
   end
 
